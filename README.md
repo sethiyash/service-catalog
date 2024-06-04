@@ -66,7 +66,7 @@ Query Params supported in List all services endpoint:
 ## Example Requests:
 - List Services with Pagination, Sorting, and Search
 ```sh
-curl -X GET "http://localhost:8080/services?page=1&pageSize=10&sortField=created_at&sortOrder=1&search=touch"
+curl -X GET "http://localhost:8080/services?page=1&pageSize=10&sortField=created_at&sortOrder=-1&search=touch"
 ```
 
 - Create a New Service

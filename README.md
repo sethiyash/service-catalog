@@ -18,7 +18,7 @@ This is a service catalog API built with Go. It allows users to view, search, pa
 ## Setup and Installation
 1. Clone the repository
     ```sh
-    git clone <repository_url>
+    git clone https://github.com/sethiyash/service-catalog.git
     cd service-catalog
     ```
 
@@ -57,22 +57,16 @@ This is a service catalog API built with Go. It allows users to view, search, pa
 - `DELETE /service/:id`: Delete a service
 
 Query Params supported in List all services endpoint:
-- page
-- pageSize 
-  Example: http://localhost:8080/services?page=2&pageSize=5
+- page (default: 1)
+- pageSize (default: 10)
 - sortField (created_at (default), name)
 - sortOrder (1 for ascending order (default), -1 for descending)
-  Example: http://localhost:8080/services?page=1&pageSize=5&sortField=name&sortOrder=-1
-           http://localhost:8080/services?page=1&pageSize=10&sortField=created_at&sortOrder=1
-- search 
-  Example: http://localhost:8080/services?page=1&pageSize=10&sortField=name&sortOrder=1&search=touch 
-
+- search
 
 ## Example Requests:
 - List Services with Pagination, Sorting, and Search
 ```sh
-curl -X GET "http://localhost:8080/services?page=1&pageSize=10&sortField=name&sortOrder=1&search=example" \
--H "Authorization: Bearer <your_jwt_token>"
+curl -X GET "http://localhost:8080/services?page=1&pageSize=10&sortField=created_at&sortOrder=1&search=touch"
 ```
 
 - Create a New Service
